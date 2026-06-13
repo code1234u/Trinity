@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen</title>
+    <style>
+        /* Base styles for a full-screen black canvas */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Loading spinner container */
+        .loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+        }
+
+        /* Blue animated circle loader */
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #161b22; /* Dark background ring */
+            border-top: 5px solid #58a6ff; /* GitHub-style blue line */
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Target content (initially hidden) */
+        .content {
+            display: none;
+            width: 100%;
+            height: 100%;
+            color: white;
+            text-align: center;
+            padding-top: 20px;
+            box-sizing: border-box;
+        }
+
+        .header-text {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loader-container" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="content" id="main-content">
+        <div class="header-text">trinity</div>
+    </div>
+
+    <script>
+        // Wait 5000 milliseconds (5 seconds) before switching screens
+        setTimeout(() => {
+            // Hide the loader
+            document.getElementById('loader').style.display = 'none';
+            
+            // Show the main content with "trinity" at the top
+            document.getElementById('main-content').style.display = 'block';
+        }, 5000);
+    </script>
+
+</body>
+</html>
