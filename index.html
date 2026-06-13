@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading Screen</title>
+    <title>Trinity Social Management</title>
     <style>
         /* Base styles for a full-screen black canvas */
         body, html {
@@ -31,8 +31,8 @@
         .spinner {
             width: 50px;
             height: 50px;
-            border: 5px solid #161b22; /* Dark background ring */
-            border-top: 5px solid #58a6ff; /* GitHub-style blue line */
+            border: 5px solid #161b22; 
+            border-top: 5px solid #58a6ff; 
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
@@ -49,14 +49,28 @@
             height: 100%;
             color: white;
             text-align: center;
-            padding-top: 20px;
+            padding-top: 40px; /* Gives space from the very top */
             box-sizing: border-box;
         }
 
-        .header-text {
-            font-size: 24px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+        /* Big, bold title formatting */
+        .header-title {
+            font-size: 48px;
+            font-weight: 800; /* Extra bold */
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+            text-transform: uppercase; /* Makes "TRINITY" stand out */
+        }
+
+        /* Smaller description text formatting */
+        .description-text {
+            font-size: 16px;
+            font-weight: 400;
+            color: #8b949e; /* Muted gray for secondary text style */
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.5;
+            padding: 0 20px;
         }
     </style>
 </head>
@@ -67,7 +81,10 @@
     </div>
 
     <div class="content" id="main-content">
-        <div class="header-text">trinity</div>
+        <div class="header-title">trinity</div>
+        <div class="description-text">
+            We help individuals and brands grow. People and companies pay us to expert-manage and run their social media presence.
+        </div>
     </div>
 
     <script>
@@ -76,7 +93,7 @@
             // Hide the loader
             document.getElementById('loader').style.display = 'none';
             
-            // Show the main content with "trinity" at the top
+            // Show the main content with the big title and description
             document.getElementById('main-content').style.display = 'block';
         }, 5000);
     </script>
